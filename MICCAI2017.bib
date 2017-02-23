@@ -97,7 +97,7 @@
 
 @inproceedings{Fishbaugh2013,
 	author = "Fishbaugh, James and Prastawa, Marcel and Gerig, Guido and Durrleman, Stanley",
-	booktitle = "{Information Processing in Medical Imaging}",
+	booktitle = "{IPMI}",
 	organization = "Springer",
 	pages = "718--729",
 	title = "{Geodesic shape regression in the framework of currents}",
@@ -166,11 +166,10 @@
 	author = "Siddiqi, Kaleem and Bouix, Sylvain and Tannenbaum, Allen and Zucker, Steven W.",
 	doi = "10.1023/A:1016376116653",
 	issn = "1573-1405",
-	journal = "International Journal of Computer Vision",
+	journal = "IJCV",
 	number = "3",
 	pages = "215--231",
 	title = "{Hamilton-Jacobi Skeletons}",
-	url = "http://dx.doi.org/10.1023/A:1016376116653",
 	volume = "48",
 	year = "2002"
 }
@@ -313,7 +312,7 @@
 
 @article{Yushkevich2006,
 	author = "Yushkevich, Paul A and Zhang, Hui and Gee, James C",
-	journal = "IEEE transactions on medical imaging",
+	journal = "IEEE Trans Med Img",
 	number = "12",
 	pages = "1547--1564",
 	publisher = "IEEE",
@@ -324,9 +323,9 @@
 
 @inproceedings{Taglia2016,
 	author = "Tagliasacchi, Andrea and Delame, Thomas and Spagnuolo, Michela and Amenta, Nina and Telea, Alexandru",
-	booktitle = "{Computer Graphics Forum}",
+	booktitle = "{Comp Graphics Forum}",
 	number = "2",
-	organization = "Wiley Online Library",
+	the_organization = "Wiley Online Library",
 	pages = "573--597",
 	title = "{3D Skeletons: A State-of-the-Art Report}",
 	volume = "35",
@@ -335,7 +334,7 @@
 
 @article{Rekik2016,
 	author = "Rekik, Islem and Li, Gang and Lin, Weili and Shen, Dinggang",
-	journal = "Medical image analysis",
+	journal = "Medical Image Analysis",
 	pages = "1--12",
 	publisher = "Elsevier",
 	title = "{Predicting infant cortical surface development using a 4D varifold-based learning framework and local topography-based shape morphing}",
@@ -354,3 +353,84 @@
 	year = "2013"
 }
 
+@article{journals/ijcv/Fletcher13,
+  added-at = {2013-08-28T00:00:00.000+0200},
+  author = {Fletcher, P. Thomas},
+  bibopturl = {http://www.bibsonomy.org/bibtex/21604aaa7cd22da9897262662673df755/dblp},
+  ee = {http://dx.doi.org/10.1007/s11263-012-0591-y},
+  interhash = {94e4129519af1cf5b4de9dffd9f6d698},
+  intrahash = {1604aaa7cd22da9897262662673df755},
+  journal = {{IJCV}},
+  keywords = {dblp},
+  number = 2,
+  pages = {171-185},
+  timestamp = {2013-08-28T00:00:00.000+0200},
+  title = {Geodesic Regression and the Theory of Least Squares on Riemannian Manifolds.},
+  opturl = {http://dblp.uni-trier.de/db/journals/ijcv/ijcv105.html#Fletcher13},
+  volume = 105,
+  year = 2013
+}
+
+@article{fletcher2004principal,
+  title={Principal geodesic analysis for the study of nonlinear statistics of shape},
+  author={Fletcher, P Thomas and Lu, Conglin and Pizer, Stephen M and Joshi, Sarang},
+  journal={IEEE Trans Med Img},
+  volume={23},
+  number={8},
+  pages={995--1005},
+  year={2004},
+  publisher={IEEE}
+}
+
+@article{kendall84BLMS,
+    author = {Kendall, David G.},
+    day = {01},
+    doi = {10.1112/blms/16.2.81},
+    issn = {1469-2120},
+    journal = {Bulletin of the London Mathematical Society},
+    number = {2},
+    pages = {81--121},
+    publisher = {Oxford University Press},
+    title = {Shape Manifolds, Procrustean Metrics, and Complex Projective Spaces},
+    volume = {16},
+    year = {1984}
+}
+
+@inproceedings{niethammer_geodesic,
+ author = {Niethammer, M. and Huang, Y. and Vialard, F.X.},
+ title = {Geodesic regression for image time-series},
+ booktitle = {MICCIA},
+ series = {LNCS},
+ year = {2011},
+ isbn = {978-3-642-23628-0},
+ location = {Toronto, Canada},
+ pages = {655--662},
+ numpages = {8},
+ VOLUME = 6892,
+ acmid = {2044835},
+ optpublisher = {Springer},
+ OPTaddress = {Berlin, Heidelberg},
+} 
+
+@InProceedings{SCI:Fis2014a,
+  author =    "J. Fishbaugh and M. Prastawa and G. Gerig and S.
+              Durrleman",
+  title =     "Geodesic Regression of Image and Shape Data for
+              Improved Modeling of {4D} Trajectories",
+  booktitle = "{ISBI}",
+  publisher = "{IEEE}",
+  pages =     "385--388",
+  year =      "2014",
+  opturl =       "http://www.sci.utah.edu/publications/fishbaugh14/fishbaugh_isbi2014.pdf",
+}
+
+@article {singh2015splines,
+	title = {Splines for Diffeomorphisms},
+	journal = {Medical Image Analysis},
+	year = {2015},
+	publisher = {Elsevier},
+	abstract = {<p>This paper develops a method for higher order parametric regression on diffeomorphisms for image regression. We present a principled way to define curves with nonzero acceleration and nonzero jerk. This work extends methods based on geodesics which have been developed during the last decade for computational anatomy in the large deformation diffeomorphic image analysis framework. In contrast to previously proposed methods to capture image changes over time, such as geodesic regression, the proposed method can capture more complex spatio-temporal deformations. We take a variational approach that is governed by an underlying energy formulation, which respects the nonflat geometry of diffeomorphisms. Such an approach of minimal energy curve estimation also provides a physical analogy to particle motion under a varying force field. This gives rise to the notion of the quadratic, the cubic and the piecewise cubic splines on the manifold of diffeomorphisms. The variational formulation of splines also allows for the use of temporal control points to control spline behavior. This necessitates the development of a shooting formulation for splines. The initial conditions of our proposed shooting polynomial paths in diffeomorphisms are analogous to the Euclidean polynomial coefficients. We experimentally demonstrate the effectiveness of using the parametric curves both for synthesizing polynomial paths and for regression of imaging data. The performance of the method is compared to geodesic regression.</p>
+},
+	attachments = {http://wwwx.cs.unc.edu/~mn/sites/default/files/singh2015_diffeosplines.pdf},
+	author = {Singh, Nikhil and Vialard, Fran{\c c}ois-Xavier and Niethammer, Marc}
+}
