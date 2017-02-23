@@ -1,0 +1,214 @@
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage[utf8]{inputenc}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{cite}
+\usepackage{hhline}
+\usepackage{authblk}
+\usepackage{comment}
+
+\urldef{\mailsa}\path|{*********************}|
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{Geodesic Shape Regression via Continuous Medial Representation}
+
+% a short form should be given in case it is too long for the running head
+\titlerunning{Geodesic Shape Regression via Continuous Medial Representation}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{**********************%
+\thanks{}%
+}
+%
+\authorrunning{Geodesic Shape Regression via Continuous Medial Representation}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{******************************\\
+\mailsa\\
+\url{}}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+\toctitle{Geodesic Shape Regression of Continuous Medial Representation}
+\maketitle
+
+\begin{abstract}
+Longitudinal shape analysis has shown great potential to improve our understanding of subject-specific changes of anatomy over time, 
+in order to capture progression of disease or efficacy of therapy from baseline to follow-up observations. 
+Shape regression estimates a continuous trajectory of shapes as the trend of time-discrete anatomical surfaces with the goal to quantify locality and magnitude of temporal changes. 
+Such analysis traditionally requires appropriate choices for alignment and normalization of shapes, 
+and therefore results are dependent on the type of alignment.
+As an alternative, we model several shapes jointly as a multi-object complex to overcome the need for individual shape alignment, 
+and to incorporate extrinsic pose changes caused by neighboring structures. 
+Shapes in our work are continuous medial representations (CM-Reps), 
+which capture intrinsic shape properties, such as local thickness, which are invariant to pose variations. 
+Regression is represented by a geodesic flow of diffeomorphisms in large deformation diffeomorphic metric mapping (LDDMM) framework which act on medial surfaces to produce continuously evolving CM-Reps. 
+In contrast to existing methods, our model captures extrinsic shape changes via ambient space deformations as well as intrinsic shape changes encoded by the CM-Reps. 
+Furthermore, our method provides explicit correspondence over the flow of CM-Reps, 
+allowing us to accurately track local thickness measurements over time. 
+We propose an optimization method that estimates a continuous trajectory of CM-Reps to match reconstructed shapes with observed shapes by a gradient descent scheme. 
+To demonstrate stability and feasibility of the proposed method, we provide experimental validation on synthetic and real anatomical shape complexes.
+
+\keywords{Longitudinal Shape Analysis, Shape Regression, Medial Representation, 4D Skeleton}
+\end{abstract}
+
+\section{Introduction}
+
+Longitudinal shape analysis which analyzes anatomical shape changes over time of individual subjects has drawn more attentions recently through increased availability of repeated longitudinal scans of individual subjects and shown great potential to improve our understanding of changes of anatomy over time related with disease progression~\cite{Gerig2016}. 
+%Longitudinal shape analysis considers possible temporal correlation between shapes from a same subject as a set and tracks shape changes of the set of shapes while shapes are considered as independent data in traditional shape analysis [].
+%Longitudinal shape analysis has shown great potential to improve our understanding of subject-specific changes of anatomy over time, in order to capture progression of disease of efficacy of therapy from baseline to follow-up observations. 
+Shape regression is an important tool for longitudinal shape analysis since it estimates a continous shape changes over time via modeling from a few number of longitudinal scans of individual subjects with intervals from a few months to even a few years. 
+Similar to traditional data regression methods, shape regression requires a model to represent shape changes and a metric to measure marginal error between the estimated model and observed shapes in a shape space.
+% Previous studies suggested different models and metrics to model the shape changes over time with given observations.
+Durrleman et al.~\cite{Durrleman2013} suggested a piecewise geodesic shape regression method which estimates piecewise geodesics on a shape space of observed shapes as a shape deformation flow.
+In~\cite{Fishbaugh2013}, a geodesic shape regression model estimates a parametrized geodesic shape evolution with currents metric in a large deformation diffeomorphic metric mapping (LDDMM).
+Rekik et al. suggested~\cite{Rekik2016} suggested a shape regression model which minimizes varifold metrics. 
+
+Modeling anatomical shape changes needs to consider an additional environmental challenge that the shape change of an anatomy may be affected by external structural changes from adjacent objects, 
+e.g. basal ganglia in a brain is pushed outward by the expansion of neighboring ventricles. 
+Thus, the shape changes of target objects caused by disease progress are coupled with extrinsic pose variation from external effects which might complicate the analysis. 
+Decoupling extrinsic and intrinsic shape property has been widely studied by skeletonization methods in image processing and graphics fields~\cite{Taglia2016}. 
+Skeletonization methods estimates a medial representation, which can be a curve, a surface, or a graph, and encodes intrinsic shape property, such as radius, on the medial representations. 
+Siddiqi et al. suggested to estimate a medial surface of shapes by detecting shocs in Blum's grassfire flow ~\cite{Blum1973} by combining a measure of the average outward flux of the vector field with a homotopy preserving thinning process~\cite{Siddiqi2002}. However, statistical analysis on the intrinsic shape property is not straightforward since the correspondence between medial surfaces or shape boundaries are not established and medial surfaces might have different topological properties. 
+Pizer et al. and Styner et al. have estimated medial properties using a mesh of medial samples with a fixed graph~\cite{Pizer2003, Styner2003} . 
+The method avails the statistical analysis on the intrinsic shape property since medial representations are in correspondence by a fixed graph. 
+Yushkevich et al. suggested a continuous medial representation (CM-Rep) to estimate a continuous medial surface with a fixed topology rather than a discrete graph. 
+The method deforms a template CM-Rep and updates its attached radius scalar field to match a target shape. 
+However, no previous skeletonization study has been suggested, in our best knowledge, to estimate a continuous or temporally correlated medial representations which is of utmost importance to longitudinal shape analysis.
+
+In this paper, we propose a geodesic shape regression via CM-Rep to estimate a continuous and differentiable shape trajectory from intermittent observations and to avail the analysis on intrinsic shape property of the continuous shape trajectory. 
+The proposed method estimates a model of continuous shape changes of CM-Rep over time in LDDMM paradigm as introduced in~\cite{Fishbaugh2013} by matching reconstructed shape boundaries of CM-Reps to observed shapes. Instead of currents metric suggested in~\cite{Fishbaugh2013}, we used varifold metric as a shape matching metric~\cite{Charon2013, Rekik2016}. As an outcome of the proposed method, the continuous trajectory of the pair of CM-Rep and its reconstructed shape boundary is estimated. The continuous trajectory of CM-Reps represents the nonlinear pose variation of shapes over time while intrinsic shape properties are encoded as functions on a CM-Rep.
+Thus, the proposed method estimates not only a continuous trajectory of shapes as suggested in previous literatures, but it also estimates a spatiotemporal trajectory of medial surfaces which has not been reported before in our knowledge. 
+
+\section{Methods}
+
+The proposed method estimates a continuous trajectory of medial surfaces and reconstructed shape boundaries over time. 
+We begin with introducing the CM-Rep as a shape representation of medial surfaces of the suggested shape regression framework and describe how we estimate the continuous trajectories in LDDMM paradigm by matching reconstructed shape boundaries of CM-Reps to observation shapes. 
+
+\subsection{Continuous Medial Representations}
+\label{ssec:CMRep}
+
+In this section, we will describe how shape are represented in our method with CM-Rep~\cite{Yushkevich2009}. 
+CM-Rep, $\mathbf{m}$, is a parametrized continuous surface with radius scalar field $\mathbf{R}$ encoded on the surface. 
+A shape boundary, $\mathbf{X}$, of $\mathbf{m}$ is reconstructed by maximum inscribed ball (MIB) with radius $\mathbf{R}$. 
+Since $\mathbf{X}$ is a reconstructed shape from a medial surface $\mathbf{m}$, $\mathbf{X}^{\pm}(u)$ of $\mathbf{X}$ on opposite sides of $\mathbf{m}(u)$ 
+can be described as the point of tangency between $\mathbf{X}(u)$ and MIB of $\mathbf{m}(u)$ and $\mathbf{R}(u)$, 
+\begin{equation}
+ \mathbf{X}^{\pm}(u) = \mathbf{m}(u) + \mathbf{R}(u)\mathbf{U}^{\pm}(u) \\
+\end{equation}
+where $u$ represents a paramter of $\mathbf{m}$ and $\mathbf{U}^{\pm}$ is the unit outward normal vectors on both directions to $\mathbf{X}$,
+\begin{equation}
+ \mathbf{U}^{\pm} = -\nabla_\mathbf{m} \mathbf{R} \pm \sqrt{ 1 - || \nabla_\mathbf{m} \mathbf{R} ||^2 }\mathbf{N}_\mathbf{m}.
+\end{equation}
+The CM-Rep $\mathbf{m}$ is represented as a surface triangular mesh with a fixed number of vertices. 
+The edge information of the reconstructed shape $\mathbf{X}$ is copied from $\mathbf{m}$ on both sides of $\mathbf{X}^\pm$ to create a surface mesh of $\mathbf{X}$. 
+This will guarantee that the surface mesh of $\mathbf{X}$ is well-defined from the well-defined medial surface mesh. 
+Since the deformation flow $\mathbf{m}$ over time in our shape regression method is defined as a flow of diffeomorphisms, the reconstructed surface mesh stays as the well-defined surface mesh, which is important for our shape matching energy function. 
+
+\subsection{Geodesic Shape Regression via Continuous Medial Representations}
+\label{ssec:Regression}
+
+To estimate a continuous trajectory of CM-Reps and shape boundaries, the method iterates between CM-Rep trajectory estimation with a fixed radius scalar field and radius scalar field estimation with a fixed CM-Reps at the time point of observation shapes. In the iteration process, the method matches a reconstructed shape boundary of CM-Rep to observation shapes by updating the geometry of CM-Reps and their radius scalar fields.
+
+\subsubsection{Initialization}
+The model requires an initial baseline CM-Rep to start with as a template $\mathbf{m}_0$ and initial radius scalar fields $\mathbf{R}_{t_i}$ at each observation time point. 
+We initialize an initial baseline CM-Rep $\mathbf{0}$ by estimating a CM-Rep with the method suggested in~\cite{Yushkevich2009} at the first observation shape $\mathbf{O}_{t_0}$.
+At each time point $t_i$, $R_{t_i}$ is estimated by the same method with an initial baseline CM-Rep $\mathbf{m}_0$. We only use $\mathbf{R}_{t_i}$ as initial radius scalar fields for our framework to estimate a continuous deformation over time of $\mathbf{m}_0$.
+
+\subsubsection{CM-Rep Shape Trajectory Estimation}
+\label{sssec:GeoUpdate}
+
+The model estimates a diffeomorphic shape  trajectory of CM-Rep $\mathbf{m}$ from a set of observed shapes $\mathbf{O}_{t_i}$ with a fixed radius scalar field at each time point $\mathbf{R}_{t_i}$.
+The geodesic flow of diffeomorphisms along with continuous time $t$, $\phi_t$ is estimated on control points $\mathbf{c}$ and momenta $\mathbf{\alpha}$ on $\mathbf{c}$~\cite{Fishbaugh2013}.
+The method optimizes the energy function which measures the distane between a reconstructed shape boundary $\mathbf{X}_{t_i}$ from a fixed radius scalar field $\mathbf{R}_{t_i}$ and a deformed CM-Rep  $\phi_{t_i}( \mathbf{m}_0 )$ at time point $t_i$. 
+\begin{equation}
+ E( \mathbf{m}_0, \phi_t ) = \sum_{i=1}^{N_{obs}} || \mathbf{X}_{t_i} ( \phi_{t_i} (\mathbf{m}_0), \mathbf{R}_{t_i} ) - \mathbf{O}_{t_i} ||^2_{\mathit{W}*} + Reg( \phi_t ),
+\end{equation}
+where $Reg(\phi_t)$ is the regularity term of $\phi_t$ and $||\cdot||_{\mathit{W}*}^2$ is a shape distance defined as a varifold metric between meshes $\mathbf{X}_{t_i}$ and $\mathbf{O}_{t_i}$.
+As discussed in Section~\ref{ssec:CMRep}, the reconstructed shape mesh $\mathbf{X}_{t_i}$ is well-defined and the surface normals are aligned as outward normal vectros from $\mathbf{m}$. 
+However, the varifold metric suits well to our problem since the surface mesh of observed shape might have flipped normals and the correspondence between $\mathbf{O}_{t_i}$ and $\mathbf{X}_{t_i}$ are not defined. 
+
+\subsubsection{Radius Scalar Field Estimation}
+\label{sssec:RadUpdate}
+
+We follow the radius scalar field estimation by solving biharmonic PDE to satisfy the sufficient conditions of valid inverse skeletonization suggested in~\cite{Yushkevich2009}.
+The radius scalar field $\mathbf{R}$ is solved by biharmonic PDE with a potential function $\rho$ defined on $\mathbf{m}$ and boundary condition function $\tau$ on a fixed $\mathbf{m}$,
+
+\begin{align}
+ &\Delta_{\mathbf{m}}^2 f(\mathbf{R}) = \rho \\
+ &f(\mathbf{R}) \|_{\gamma} = \tau^2 \\
+ &f(\mathbf{R}), \nu \|_\gamma = -2 \tau \sqrt{ 1 - ( \frac{d\tau}{ds} ) } 
+\label{eq:BiPDE}
+\end{align}
+
+where $f(\mathbf{R}) = \mathbf{R}^2$, the boundary condition function $\tau$ is a radius on the boundary of $\mathbf{m}$, $\Delta_{\mathbf{m}}$ denotes the Laplace-Beltrami operator on $\mathbf{m}$, $\gamma$ is the parametrized edge of $\mathbf{m}$ by the arc length $s$, and $f(\mathbf{R}), \nu$ denots the gradient of $f$ with respect to the unit outward normal vector $\nu$. 
+Equation~\ref{eq:BiPDE} can be represented as a linear operator function with solution $f(\mathbf{R})$, $f(\mathbf{R}^2) = \Psi( \rho, \tau)$.
+$\mathbf{R}$ is a squared root of the solution of biharmonic PDE $f(\mathbf{R})$. 
+With a fixed $\mathbf{m}$, $\mathbf{R}$ is estimated by updating $\rho$ and $\tau$ via gradient descent with the Gateaux derivative of the shape matching function $F( \mathbf{m}, \rho | \mathbf{O})$ to an observed shape $\mathbf{O}$ as described in~\cite{Yushkevich2006}.
+
+The proposed method iterates between the CM-Rep shape trajectory estimation and the radius scalar field estimation until it reaches termination criteria. 
+To have a continuous trajectory of reconstructed shape, we apply quadratic spline regression on $\mathbf{R}_{t_i}$ to estimate $\mathbf{R}_t$ which is a radius scalar field funciton over time $t$ for $\phi_t(\mathbf{m}_0)$. 
+
+\section{Experiments}
+
+\section{Conclusions}
+
+\begin{comment}
+In this study, we proposed a novel framework that makes use of subject-specific shape deformation trajectories by diffeomorphic shape regression models and the longitudinal statistical analysis.
+Results show how the shape deformation has more significance than the volumetric analysis and how significantly it correlates with continuous CAP score for a global shape and local subregions. 
+The global shape analysis showed that the gradient magnitude of deformation vectors over global shape has better significance than volume-wise metric regardless of different baseline shapes of different subjects.
+The local shape analysis also revealed statistically significant general trends of subregion shape changes. 
+As a future direction, the analysis will also be extended to develop an HD progression model that will allow prediction of the stage of disease of individuals based on shape biomarkers.
+\end{comment}
+
+\bibliography{MICCAI2017.bib}
+\bibliographystyle{splncs03}
+
+
+
+\end{document}

@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{Blum1973}
+Blum, H.: {Biological shape and visual science (Part I)}. Journal of
+  theoretical Biology  38(2),  205--287 (1973)
+
+\bibitem{Charon2013}
+Charon, N., Trouv{\'e}, A.: {The varifold representation of nonoriented shapes
+  for diffeomorphic registration}. SIAM Journal on Imaging Sciences  6(4),
+  2547--2580 (2013)
+
+\bibitem{Durrleman2013}
+Durrleman, S., Pennec, X., Trouv{\'e}, A., Braga, J., Gerig, G., Ayache, N.:
+  {Toward a comprehensive framework for the spatiotemporal statistical analysis
+  of longitudinal shape data}. International journal of computer vision
+  103(1),  22--59 (2013)
+
+\bibitem{Fishbaugh2013}
+Fishbaugh, J., Prastawa, M., Gerig, G., Durrleman, S.: {Geodesic shape
+  regression in the framework of currents}. In: {Information Processing in
+  Medical Imaging}. pp. 718--729. Springer (2013)
+
+\bibitem{Gerig2016}
+Gerig, G., Fishbaugh, J., Sadeghi, N.: {{L}ongitudinal modeling of appearance
+  and shape and its potential for clinical use}. Med Image Anal  33,  114--121
+  (Oct 2016)
+
+\bibitem{Pizer2003}
+Pizer, S.M., Gerig, G., Joshi, S., Aylward, S.R.: {Multiscale medial
+  shape-based analysis of image objects}. Proceedings of the IEEE  91(10),
+  1670--1679 (2003)
+
+\bibitem{Rekik2016}
+Rekik, I., Li, G., Lin, W., Shen, D.: {Predicting infant cortical surface
+  development using a 4D varifold-based learning framework and local
+  topography-based shape morphing}. Medical image analysis  28,  1--12 (2016)
+
+\bibitem{Siddiqi2002}
+Siddiqi, K., Bouix, S., Tannenbaum, A., Zucker, S.W.: {Hamilton-Jacobi
+  Skeletons}. International Journal of Computer Vision  48(3),  215--231
+  (2002), \url{http://dx.doi.org/10.1023/A:1016376116653}
+
+\bibitem{Styner2003}
+Styner, M., Gerig, G., Lieberman, J., Jones, D., Weinberger, D.: {Statistical
+  shape analysis of neuroanatomical structures based on medial models}. Medical
+  Image Analysis  7(3),  207--220 (2003),
+  \url{http://www.sciencedirect.com/science/article/pii/S136184150200110X}
+
+\bibitem{Taglia2016}
+Tagliasacchi, A., Delame, T., Spagnuolo, M., Amenta, N., Telea, A.: {3D
+  Skeletons: A State-of-the-Art Report}. In: {Computer Graphics Forum}.
+  vol.~35, pp. 573--597. Wiley Online Library (2016)
+
+\bibitem{Yushkevich2009}
+Yushkevich, P.A.: {Continuous medial representation of brain structures using
+  the biharmonic PDE}. NeuroImage  45(1),  S99--S110 (2009)
+
+\bibitem{Yushkevich2006}
+Yushkevich, P.A., Zhang, H., Gee, J.C.: {Continuous medial representation for
+  anatomical structures}. IEEE transactions on medical imaging  25(12),
+  1547--1564 (2006)
+
+\end{thebibliography}

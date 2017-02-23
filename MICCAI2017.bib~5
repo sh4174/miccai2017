@@ -1,0 +1,302 @@
+@comment{x-kbibtex-personnameformatting=<%l><, %f>}
+
+@article{Younes2014,
+	author = "Younes, L. and Ratnanather, J. T. and Brown, T. and Aylward, E. and Nopoulos, P. and Johnson, H. and Magnotta, V. A. and Paulsen, J. S. and Margolis, R. L. and Albin, R. L. and Miller, M. I. and Ross, C. A.",
+	journal = "Hum Brain Mapp",
+	month = "Mar",
+	number = "3",
+	pages = "792--809",
+	title = "{{R}egionally selective atrophy of subcortical structures in prodromal {H}{D} as revealed by statistical shape analysis}",
+	volume = "35",
+	year = "2014"
+}
+
+@book{Paulson2011,
+	author = "Paulson, HL and Albin, RL",
+	publisher = "CRC Press, Boca Raton (FL)",
+	title = "{Huntington{\rq}s disease: Clinical features and routes to therapy}",
+	year = "2011"
+}
+
+@article{Imarisio2008,
+	author = "Imarisio, Sara and Carmichael, Jenny and Korolchuk, Viktor and Chen, Chien-Wen and Saiki, Shinji and Rose, Claudia and Krishna, Gauri and Davies, Janet E and Ttofi, Evangelia and Underwood, Benjamin R and others",
+	journal = "Biochemical Journal",
+	number = "2",
+	pages = "191--209",
+	publisher = "Portland Press Limited",
+	title = "{Huntington's disease: from pathology and genetics to potential therapies}",
+	volume = "412",
+	year = "2008"
+}
+
+@article{MacDonald93,
+	author = "MacDonald, Marcy E and Ambrose, Christine M and Duyao, Mabel P and Myers, Richard H and Lin, Carol and Srinidhi, Lakshmi and Barnes, Glenn and Taylor, Sherryl A and James, Marianne and Groot, Nicolet and others",
+	journal = "Cell",
+	number = "6",
+	pages = "971--983",
+	publisher = "Elsevier",
+	title = "{A novel gene containing a trinucleotide repeat that is expanded and unstable on Huntington's disease chromosomes}",
+	volume = "72",
+	year = "1993"
+}
+
+@article{Ferrante1987a,
+	author = "Ferrante, Robert J and Beal, M Flint and Kowall, Neil W and Richardson, Edward P and Martin, Joseph B",
+	journal = "Brain research",
+	number = "1",
+	pages = "162--166",
+	publisher = "Elsevier",
+	title = "{Sparing of acetylcholinesterase-containing striatal neurons in Huntington's disease}",
+	volume = "411",
+	year = "1987"
+}
+
+@article{Ferrante1987b,
+	author = "Ferrante, Robert J and Kowall, Neil W and Beal, M Flint and Martin, Joseph B and Bird, Edward D and {Richardson Jr}, EP",
+	journal = "Journal of Neuropathology \& Experimental Neurology",
+	number = "1",
+	pages = "12--27",
+	publisher = "LWW",
+	title = "{Morphologic and histochemical characteristics of a spared subset of striatal neurons in Huntington's disease.}",
+	volume = "46",
+	year = "1987"
+}
+
+@article{Vonsattel1985,
+	author = "Vonsattel, Jean-Paul and Myers, Richard H and Stevens, Thomas J and Ferrante, Robert J and Bird, Edward D and {Richardson Jr}, Edward P",
+	journal = "Journal of Neuropathology \& Experimental Neurology",
+	number = "6",
+	pages = "559--577",
+	publisher = "LWW",
+	title = "{Neuropathological classification of Huntington's disease.}",
+	volume = "44",
+	year = "1985"
+}
+
+@article{Zhang2011,
+	author = "Zhang, Y. and Long, J. D. and Mills, J. A. and Warner, J. H. and Lu, W. and Paulsen, J. S.",
+	journal = "Am. J. Med. Genet. B Neuropsychiatr. Genet.",
+	month = "Dec",
+	number = "7",
+	pages = "751--763",
+	title = "{{I}ndexing disease progression at study entry with individuals at-risk for {H}untington disease}",
+	volume = "156B",
+	year = "2011"
+}
+
+@article{Langbehn2010,
+	author = "Group, HD Collaborative",
+	journal = "Am. J. Med. Genet. B Neuropsychiatr. Genet.",
+	month = "Mar",
+	number = "2",
+	pages = "397--408",
+	title = "{{C}{A}{G}-repeat length and the age of onset in {H}untington disease ({H}{D}): a review and validation study of statistical approaches}",
+	volume = "153B",
+	year = "2010"
+}
+
+@inproceedings{Fishbaugh2013,
+	author = "Fishbaugh, James and Prastawa, Marcel and Gerig, Guido and Durrleman, Stanley",
+	booktitle = "{Information Processing in Medical Imaging}",
+	organization = "Springer",
+	pages = "718--729",
+	title = "{Geodesic shape regression in the framework of currents}",
+	year = "2013"
+}
+
+@article{Durrleman2013,
+	author = "Durrleman, Stanley and Pennec, Xavier and Trouv{\'e}, Alain and Braga, Jos{\'e} and Gerig, Guido and Ayache, Nicholas",
+	journal = "International journal of computer vision",
+	number = "1",
+	pages = "22--59",
+	publisher = "Springer",
+	title = "{Toward a comprehensive framework for the spatiotemporal statistical analysis of longitudinal shape data}",
+	volume = "103",
+	year = "2013"
+}
+
+@article{Paulsen2014,
+	author = "Paulsen, Jane S and Long, Jeffrey D and Ross, Christopher A and Harrington, Deborah L and Erwin, Cheryl J and Williams, Janet K and Westervelt, Holly James and Johnson, Hans J and Aylward, Elizabeth H and Zhang, Ying and others",
+	journal = "The Lancet Neurology",
+	number = "12",
+	pages = "1193--1201",
+	publisher = "Elsevier",
+	title = "{Prediction of manifest Huntington's disease with clinical and imaging measures: a prospective observational study}",
+	volume = "13",
+	year = "2014"
+}
+
+@article{Paulsen2014C,
+	author = "Paulsen, Jane S and Long, Jeffrey D and Johnson, Hans J and Aylward, Elizabeth H and Ross, Christopher A and Williams, Janet K and Nance, Martha A and Erwin, Cheryl J and Westervelt, Holly J and Harrington, Deborah L and others",
+	journal = "Frontiers in aging neuroscience",
+	number = "APR",
+	title = "{Clinical and biomarker changes in premanifest Huntington disease show trial feasibility: a decade of the PREDICT-HD study}",
+	volume = "6",
+	year = "2014"
+}
+
+@incollection{Prasa2014,
+	author = "Muralidharan, Prasanna and Fishbaugh, James and Johnson, Hans J and Durrleman, Stanley and Paulsen, Jane S and Gerig, Guido and Fletcher, P Thomas",
+	booktitle = "{Medical Image Computing and Computer-Assisted Intervention--MICCAI 2014}",
+	pages = "49--56",
+	publisher = "Springer",
+	title = "{Diffeomorphic shape trajectories for improved longitudinal segmentation and statistics}",
+	year = "2014"
+}
+
+@article{Bates2014,
+	author = "Bates, Douglas and M{\"a}chler, Martin and Bolker, Ben and Walker, Steve",
+	journal = "arXiv preprint arXiv:1406.5823",
+	title = "{Fitting linear mixed-effects models using lme4}",
+	year = "2014"
+}
+
+@article{kim2013,
+	author = "Kim, Eun Young and Johnson, Hans J",
+	journal = "Frontiers in neuroinformatics",
+	number = "29",
+	publisher = "Frontiers",
+	title = "{Robust multi-site MR data processing: iterative optimization of bias correction, tissue classification, and registration}",
+	volume = "7",
+	year = "2013"
+}
+
+@article{Siddiqi2002,
+	abstract = "The eikonal equation and variants of it are of significant interest for problems in computer vision and image processing. It is the basis for continuous versions of mathematical morphology, stereo, shape-from-shading and for recent dynamic theories of shape. Its numerical simulation can be delicate, owing to the formation of singularities in the evolving front and is typically based on level set methods. However, there are more classical approaches rooted in Hamiltonian physics which have yet to be widely used by the computer vision community. In this paper we review the Hamiltonian formulation, which offers specific advantages when it comes to the detection of singularities or shocks. We specialize to the case of Blum's grassfire flow and measure the average outward flux of the vector field that underlies the Hamiltonian system. This measure has very different limiting behaviors depending upon whether the region over which it is computed shrinks to a singular point or a non-singular one. Hence, it is an effective way to distinguish between these two cases. We combine the flux measurement with a homotopy preserving thinning process applied in a discrete lattice. This leads to a robust and accurate algorithm for computing skeletons in 2D as well as 3D, which has low computational complexity. We illustrate the approach with several computational examples.",
+	author = "Siddiqi, Kaleem and Bouix, Sylvain and Tannenbaum, Allen and Zucker, Steven W.",
+	doi = "10.1023/A:1016376116653",
+	issn = "1573-1405",
+	journal = "International Journal of Computer Vision",
+	number = "3",
+	pages = "215--231",
+	title = "{Hamilton-Jacobi Skeletons}",
+	url = "http://dx.doi.org/10.1023/A:1016376116653",
+	volume = "48",
+	year = "2002"
+}
+
+@article{Blum1973,
+	author = "Blum, Harry",
+	journal = "Journal of theoretical Biology",
+	number = "2",
+	pages = "205--287",
+	publisher = "Elsevier",
+	title = "{Biological shape and visual science (Part I)}",
+	volume = "38",
+	year = "1973"
+}
+
+@inproceedings{Gerig2001,
+	author = "Gerig, G. and Styner, M. and Jones, D. and Weinberger, D. and Lieberman, J.",
+	booktitle = "{Mathematical Methods in Biomedical Image Analysis, 2001. MMBIA 2001. IEEE Workshop on}",
+	doi = "10.1109/MMBIA.2001.991731",
+	keywords = "Legendre polynomials; biomedical MRI; brain; harmonic analysis; image matching; image segmentation; medical image processing; surface fitting; 3D MRI; 3D connectivity; Legendre polynomials; binary segmentations; brain ventricles; dizygotic twin pairs; enlarged ventricular size; intrinsic coordinate system pairwise shape similarity; left lateral ventricles; mean squared distance; model-based segmentation; monozygotic twin pairs; morphometric feature; multiscale boundary description; neuroimaging; parameterization computation; polygonal surface mesh; psychiatric illness; right lateral ventricles; schizophrenia; series expansion; shape analysis; shape representation; single gradient-echo channel; spherical harmonics; supervised classification; ventricular shape; voxel-based objects; Approximation error; Biological system modeling; Brain modeling; Geometry; Humans; Shape measurement; Solid modeling; Statistical analysis; Topology; Visualization",
+	month = "",
+	pages = "171--178",
+	title = "{Shape analysis of brain ventricles using SPHARM}",
+	year = "2001"
+}
+
+@article{Styner2003,
+	author = "Styner, M and Gerig, G and Lieberman, J and Jones, D and Weinberger, D",
+	doi = "10.1016/S1361-8415(02)00110-X",
+	issn = "1361-8415",
+	journal = "Medical Image Analysis",
+	keywords = "Medical image analysis; Shape analysis; Voronoi skeleton; Medial shape description; Brain morphometry",
+	number = "3",
+	pages = "207--220",
+	title = "{Statistical shape analysis of neuroanatomical structures based on medial models}",
+	url = "http://www.sciencedirect.com/science/article/pii/S136184150200110X",
+	volume = "7",
+	year = "2003"
+}
+
+@article{Pizer2003,
+	author = "Pizer, Stephen M and Gerig, Guido and Joshi, Sarang and Aylward, Stephen R",
+	journal = "Proceedings of the IEEE",
+	number = "10",
+	pages = "1670--1679",
+	publisher = "IEEE",
+	title = "{Multiscale medial shape-based analysis of image objects}",
+	volume = "91",
+	year = "2003"
+}
+
+@article{Davatzikos1996,
+	author = "Davatzikos, Christos and Vaillant, Marc and Resnick, Susan M and Prince, Jerry L and Letovsky, Stanley and Bryan, R Nick",
+	journal = "Journal of computer assisted tomography",
+	number = "1",
+	pages = "88--97",
+	publisher = "LWW",
+	title = "{A computerized approach for morphological analysis of the corpus callosum}",
+	volume = "20",
+	year = "1996"
+}
+
+@article{Joshi1997,
+	author = "Joshi, Sarang C. and Miller, Michael I. and Grenander, Ulf",
+	journal = "IJPRAI",
+	number = "8",
+	pages = "1317--1343",
+	publisher = "Citeseer",
+	title = "{On the geometry and shape of brain sub-manifolds}",
+	volume = "11",
+	year = "1997"
+}
+
+@inbook{Fishbaugh2012,
+	address = "Berlin, Heidelberg",
+	author = "Fishbaugh, James and Prastawa, Marcel and Durrleman, Stanley and Piven, Joseph and Gerig, Guido",
+	booktitle = "{Medical Image Computing and Computer-Assisted Intervention -- MICCAI 2012: 15th International Conference, Nice, France, October 1-5, 2012, Proceedings, Part I}",
+	doi = "10.1007/978-3-642-33415-3_90",
+	editor = "Ayache, Nicholas and Delingette, Herv{\'e} and Golland, Polina and Mori, Kensaku",
+	isbn = "978-3-642-33415-3",
+	pages = "731--738",
+	publisher = "Springer Berlin Heidelberg",
+	title = "{Analysis of Longitudinal Shape Variability via Subject Specific Growth Modeling}",
+	url = "http://dx.doi.org/10.1007/978-3-642-33415-3_90",
+	year = "2012"
+}
+
+@article{Rubner2000,
+	author = "Rubner, Yossi and Tomasi, Carlo and Guibas, Leonidas J",
+	journal = "International journal of computer vision",
+	number = "2",
+	pages = "99--121",
+	publisher = "Springer",
+	title = "{The earth mover's distance as a metric for image retrieval}",
+	volume = "40",
+	year = "2000"
+}
+
+@article{Durrleman2009,
+	author = "Durrleman, Stanley and Pennec, Xavier and Trouv{\'e}, Alain and Ayache, Nicholas",
+	journal = "Medical image analysis",
+	number = "5",
+	pages = "793--808",
+	publisher = "Elsevier",
+	title = "{Statistical models of sets of curves and surfaces based on currents}",
+	volume = "13",
+	year = "2009"
+}
+
+@article{Lorenzi2015,
+	author = "Lorenzi, M. and Pennec, X. and Frisoni, G. B. and Ayache, N.",
+	journal = "Neurobiol. Aging",
+	month = "Jan",
+	pages = "42--52",
+	title = "{{D}isentangling normal aging from {A}lzheimer's disease in structural magnetic resonance images}",
+	volume = "36 Suppl 1",
+	year = "2015"
+}
+
+@article{Gerig2016,
+	author = "Gerig, G. and Fishbaugh, J. and Sadeghi, N.",
+	journal = "Med Image Anal",
+	month = "Oct",
+	pages = "114--121",
+	title = "{{L}ongitudinal modeling of appearance and shape and its potential for clinical use}",
+	volume = "33",
+	year = "2016"
+}
+
