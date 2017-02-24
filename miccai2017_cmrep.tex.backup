@@ -159,10 +159,6 @@ To have a continuous trajectory of reconstructed shape, we apply quadratic splin
 \label{ssec:Synthetic}
 
 
-
-\subsubsection{Huntington's Disease Data}
-\label{ssec:HD}
-
 \begin{figure}[htb!]
 \centering
   \subfloat{ \includegraphics[width=22mm, height=22mm, frame]{./figure/Observation1.png} } \nonumber 
@@ -184,6 +180,9 @@ To have a continuous trajectory of reconstructed shape, we apply quadratic splin
 \label{figTrajs}
 \end{figure}
 
+\subsubsection{Huntington's Disease Data}
+\label{ssec:HD}
+
 We apply our method to analyze the shape changes of a caudate in basal ganglia compex of a high risk subject and a control group subject from PREDICT-HD Huntinton's disease (HD) database~\cite{Paulsen2014}.
 Shape data of caudates of HD patients have interesting features which well suits availability of the proposed method. Each subject has only a few scans, typically two to four scans, with 0.5-2.5 years interval between scans. Since interval periods are varying for each subject and even between scans, the continuous shape trajectories are utmostly necessary to study correlation between shape changes and disease progression. Also, the clinical study~\cite{Vonsattel1985} suggested the selective atrophy of caudates for HD patients, which is not straight forward to be captured by previously suggested shape regression methods. 
 
@@ -196,7 +195,7 @@ CM-Reps and reconstructed shape boundaries are sampled from continuous trajector
   \subfloat{ \includegraphics[width=50mm, height=40mm]{./figure/RadiusSlope_Cont_ColorScale.png} } \\
   \subfloat{ \includegraphics[width=50mm, height=40mm]{./figure/PValue_High.png} } 
   \subfloat{ \includegraphics[width=50mm, height=40mm]{./figure/PValue_Cont.png} } 
-\caption{ Intial template shape boundaries of a high risk subject and a control group subject color coded with the slope of radius change over time. (a) The subregion of the left caudate of a high risk subject has the selective atrophy which does not appear on (b) the caudate of a control group subject. In (c) and (d), p values with 99\% confidence interval of the estimated slope by linear regression over time at each point is color coded on reconstructed shape surface. }
+\caption{ Intial template shape boundaries of a high risk subject and a control group subject color coded with the slope of radius change over time. (a) The subregion of the left caudate of a high risk subject  }
 \label{figRadiusSlope}
 \end{figure}
 

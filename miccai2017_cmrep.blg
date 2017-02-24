@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: miccai2017_cmrep.aux
+The style file: splncs03.bst
+Database file #1: MICCAI2017.bib.bib
+Warning--can't use both volume and number fields in Taglia2016
+You've used 16 entries,
+            2785 wiz_defined-function locations,
+            710 strings with 7534 characters,
+and the built_in function-call counts, 10670 in all, are:
+= -- 919
+> -- 337
+< -- 28
++ -- 138
+- -- 122
+* -- 694
+:= -- 1330
+add.period$ -- 22
+call.type$ -- 16
+change.case$ -- 116
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 912
+empty$ -- 879
+format.name$ -- 135
+if$ -- 2335
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 188
+newline$ -- 53
+num.names$ -- 32
+pop$ -- 304
+preamble$ -- 1
+purify$ -- 92
+quote$ -- 0
+skip$ -- 325
+stack$ -- 0
+substring$ -- 704
+swap$ -- 585
+text.length$ -- 28
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 64
+warning$ -- 1
+while$ -- 92
+width$ -- 18
+write$ -- 167
+(There was 1 warning)

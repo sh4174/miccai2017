@@ -1,0 +1,81 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{SCI:Fis2014a}
+Fishbaugh, J., Prastawa, M., Gerig, G., Durrleman, S.: Geodesic regression of
+  image and shape data for improved modeling of {4D} trajectories. In: {ISBI}.
+  pp. 385--388. {IEEE} (2014)
+
+\bibitem{Fishbaugh2013}
+Fishbaugh, J., Prastawa, M., Gerig, G., Durrleman, S.: {Geodesic shape
+  regression in the framework of currents}. In: {IPMI}. pp. 718--729. Springer
+  (2013)
+
+\bibitem{journals/ijcv/Fletcher13}
+Fletcher, P.T.: Geodesic regression and the theory of least squares on
+  riemannian manifolds. {IJCV}  105(2),  171--185 (2013)
+
+\bibitem{fletcher2004principal}
+Fletcher, P.T., Lu, C., Pizer, S.M., Joshi, S.: Principal geodesic analysis for
+  the study of nonlinear statistics of shape. IEEE Trans Med Img  23(8),
+  995--1005 (2004)
+
+\bibitem{Gerig2016}
+Gerig, G., Fishbaugh, J., Sadeghi, N.: {{L}ongitudinal modeling of appearance
+  and shape and its potential for clinical use}. Med Image Anal  33,  114--121
+  (Oct 2016)
+
+\bibitem{kendall84BLMS}
+Kendall, D.G.: Shape manifolds, procrustean metrics, and complex projective
+  spaces. Bulletin of the London Mathematical Society  16(2),  81--121 (1984)
+
+\bibitem{niethammer_geodesic}
+Niethammer, M., Huang, Y., Vialard, F.: Geodesic regression for image
+  time-series. In: MICCIA. LNCS, vol. 6892, pp. 655--662 (2011)
+
+\bibitem{Paulsen2014}
+Paulsen, J.S., Long, J.D., Ross, C.A., Harrington, D.L., Erwin, C.J., Williams,
+  J.K., Westervelt, H.J., Johnson, H.J., Aylward, E.H., Zhang, Y., et~al.:
+  {Prediction of manifest Huntington's disease with clinical and imaging
+  measures: a prospective observational study}. The Lancet Neurology  13(12),
+  1193--1201 (2014)
+
+\bibitem{Pizer2003}
+Pizer, S.M., Gerig, G., Joshi, S., Aylward, S.R.: {Multiscale medial
+  shape-based analysis of image objects}. Proceedings of the IEEE  91(10),
+  1670--1679 (2003)
+
+\bibitem{Rekik2016}
+Rekik, I., Li, G., Lin, W., Shen, D.: {Predicting infant cortical surface
+  development using a 4D varifold-based learning framework and local
+  topography-based shape morphing}. Medical Image Analysis  28,  1--12 (2016)
+
+\bibitem{Siddiqi2002}
+Siddiqi, K., Bouix, S., Tannenbaum, A., Zucker, S.W.: {Hamilton-Jacobi
+  Skeletons}. IJCV  48(3),  215--231 (2002)
+
+\bibitem{singh2015splines}
+Singh, N., Vialard, F.X., Niethammer, M.: Splines for diffeomorphisms. Medical
+  Image Analysis  (2015)
+
+\bibitem{Taglia2016}
+Tagliasacchi, A., Delame, T., Spagnuolo, M., Amenta, N., Telea, A.: {3D
+  Skeletons: A State-of-the-Art Report}. In: {Comp Graphics Forum}. vol.~35,
+  pp. 573--597 (2016)
+
+\bibitem{Vonsattel1985}
+Vonsattel, J.P., Myers, R.H., Stevens, T.J., Ferrante, R.J., Bird, E.D.,
+  {Richardson Jr}, E.P.: {Neuropathological classification of Huntington's
+  disease.} Journal of Neuropathology \& Experimental Neurology  44(6),
+  559--577 (1985)
+
+\bibitem{Yushkevich2009}
+Yushkevich, P.A.: {Continuous medial representation of brain structures using
+  the biharmonic PDE}. NeuroImage  45(1),  S99--S110 (2009)
+
+\bibitem{Yushkevich2006}
+Yushkevich, P.A., Zhang, H., Gee, J.C.: {Continuous medial representation for
+  anatomical structures}. IEEE Trans Med Img  25(12),  1547--1564 (2006)
+
+\end{thebibliography}
