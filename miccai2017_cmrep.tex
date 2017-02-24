@@ -184,21 +184,22 @@ To have a continuous trajectory of reconstructed shape, we apply quadratic splin
 \label{figTrajs}
 \end{figure}
 
+
+\begin{figure}[htb!]
+\centering
+  \subfloat[Radius change - High risk]{ \includegraphics[width=50mm, height=40mm]{./figure/RadiusSlope_High_ColorBar.png} }  
+  \subfloat[Radius change - Control]{ \includegraphics[width=50mm, height=40mm]{./figure/RadiusSlope_Cont_ColorScale.png} } \\
+  \subfloat[p value - High risk]{ \includegraphics[width=50mm, height=40mm]{./figure/PValue_High.png} } 
+  \subfloat[p value - Control]{ \includegraphics[width=50mm, height=40mm]{./figure/PValue_Cont.png} } 
+\caption{ Intial template shape boundaries of a high risk subject and a control group subject color coded with the slope of radius change over time. (a) The subregion of the left caudate of a high risk subject has the selective atrophy which does not appear on (b) the caudate of a control group subject. In (c) and (d), p values with 99\% confidence interval of the estimated slope by linear regression over time at each point is color coded on reconstructed shape surface. }
+\label{figRadiusSlope}
+\end{figure}
+
 We apply our method to analyze the shape changes of a caudate in basal ganglia compex of a high risk subject and a control group subject from PREDICT-HD Huntinton's disease (HD) database~\cite{Paulsen2014}.
 Shape data of caudates of HD patients have interesting features which well suits availability of the proposed method. Each subject has only a few scans, typically two to four scans, with 0.5-2.5 years interval between scans. Since interval periods are varying for each subject and even between scans, the continuous shape trajectories are utmostly necessary to study correlation between shape changes and disease progression. Also, the clinical study~\cite{Vonsattel1985} suggested the selective atrophy of caudates for HD patients, which is not straight forward to be captured by previously suggested shape regression methods. 
 
 Figure~\ref{figTrajs} displays the observed shapes (first row), the trajectory of reconstructed shape boundaries (second row) and the continuous trajectory of CM-Reps (third row) estimated by the proposed method. 
 CM-Reps and reconstructed shape boundaries are sampled from continuous trajectories, but a CM-Rep and a shape boundary at any time point within an observation period can be selected by shoot-and-flow diffeomorphisms to an initial baseline CM-Rep and its radius scalar field. The radius scalar field of each shape in trajectories are color coded as thicker parts of a shape with a large radius is displayed as red and blue indicates thinner subregions. The videos of the estimated continuous trajectories of CM-Reps and shape boundaries are included in a supplementary material. 
-
-\begin{figure}[htb!]
-\centering
-  \subfloat{ \includegraphics[width=50mm, height=40mm]{./figure/RadiusSlope_High_ColorBar.png} }  
-  \subfloat{ \includegraphics[width=50mm, height=40mm]{./figure/RadiusSlope_Cont_ColorScale.png} } \\
-  \subfloat{ \includegraphics[width=50mm, height=40mm]{./figure/PValue_High.png} } 
-  \subfloat{ \includegraphics[width=50mm, height=40mm]{./figure/PValue_Cont.png} } 
-\caption{ Intial template shape boundaries of a high risk subject and a control group subject color coded with the slope of radius change over time. (a) The subregion of the left caudate of a high risk subject has the selective atrophy which does not appear on (b) the caudate of a control group subject. In (c) and (d), p values with 99\% confidence interval of the estimated slope by linear regression over time at each point is color coded on reconstructed shape surface. }
-\label{figRadiusSlope}
-\end{figure}
 
 We analyzed how radius on a reconstructed shape boundary changed over time to show the selective atrophy of caudates for a high risk subject. 
 Figure~\ref{figRadiusSlope} shows the radius changes over time on reconstructed shape boundaries at an initial time point for each individual. 
