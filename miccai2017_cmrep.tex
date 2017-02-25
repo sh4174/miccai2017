@@ -86,14 +86,14 @@ In this paper, we propose geodesic shape regression of CM-Reps to estimate a con
 \section{Methods}
 
 The proposed method estimates a continuous trajectory of medial surfaces and reconstructed shape boundaries over time. 
-We begin with introducing the CM-Rep as a shape representation of medial surfaces of the suggested shape regression framework and describe how we estimate the continuous trajectories in LDDMM paradigm by matching reconstructed shape boundaries of CM-Reps to observation shapes. 
+We begin with introducing the CM-Rep medial surface and describe how to estimate the continuous trajectories in the LDDMM setting by matching reconstructed shape boundaries of CM-Reps to observation shapes. 
 
 \subsection{Continuous Medial Representations}
 \label{ssec:CMRep}
 
-In this section, we will describe how shape are represented in our method with CM-Rep~\cite{Yushkevich2009}. 
-CM-Rep, $\mathbf{m}$, is a parameterized continuous surface with radius scalar field $\mathbf{R}$ encoded on the surface. 
-A shape boundary, $\mathbf{X}$, of $\mathbf{m}$ is reconstructed by maximum inscribed ball (MIB) with radius $\mathbf{R}$. 
+In this section, we briefly describe the CM-Rep shape representation~\cite{Yushkevich2009}. 
+A CM-Rep $\mathbf{m}$ is a parameterized continuous surface with radius scalar field $\mathbf{R}$ encoded on the surface. 
+A shape boundary $\mathbf{X}$ of $\mathbf{m}$ is reconstructed by a maximum inscribed ball (MIB) with radius $\mathbf{R}$. 
 Since $\mathbf{X}$ is a reconstructed shape from a medial surface $\mathbf{m}$, $\mathbf{X}^{\pm}(u)$ of $\mathbf{X}$ on opposite sides of $\mathbf{m}(u)$ 
 can be described as the point of tangency between $\mathbf{X}(u)$ and MIB of $\mathbf{m}(u)$ and $\mathbf{R}(u)$, 
 \begin{equation}
@@ -106,36 +106,36 @@ where $u$ represents a parameter of $\mathbf{m}$ and $\mathbf{U}^{\pm}$ is the u
 The CM-Rep $\mathbf{m}$ is represented as a surface triangular mesh with a fixed number of vertices. 
 The edge information of the reconstructed shape $\mathbf{X}$ is copied from $\mathbf{m}$ on both sides of $\mathbf{X}^\pm$ to create a surface mesh of $\mathbf{X}$. 
 This will guarantee that the surface mesh of $\mathbf{X}$ is well-defined from the well-defined medial surface mesh. 
-Since the deformation flow $\mathbf{m}$ over time in our shape regression method is defined as a flow of diffeomorphisms, the reconstructed surface mesh stays as the well-defined surface mesh, which is important for our shape matching energy function. 
+Since the deformation flow $\mathbf{m}$ over time in our shape regression method is defined as a flow of diffeomorphisms, the reconstructed surface mesh stays well-defined, which is important for the shape matching energy function. 
 
 \subsection{Geodesic Shape Regression via Continuous Medial Representations}
 \label{ssec:Regression}
 
-To estimate a continuous trajectory of CM-Reps and shape boundaries, the method iterates between CM-Rep trajectory estimation with a fixed radius scalar field and radius scalar field estimation with a fixed CM-Reps at the time point of observation shapes. In the iteration process, the method matches a reconstructed shape boundary of CM-Rep to observation shapes by updating the geometry of CM-Reps and their radius scalar fields.
+To estimate a continuous trajectory of CM-Reps and shape boundaries, the method iterates between CM-Rep trajectory estimation with a fixed radius scalar field and radius scalar field estimation with a fixed CM-Reps at the time point of observation shapes. During the iterative process, the method matches a reconstructed shape boundary of CM-Reps to observation shapes by updating the geometry of CM-Reps and their radius scalar fields.
 
 \subsubsection{Initialization}
 The model requires an initial baseline CM-Rep to start with as a template $\mathbf{m}_0$ and initial radius scalar fields $\mathbf{R}_{t_i}$ at each observation time point. 
 We initialize an initial baseline CM-Rep $\mathbf{m}_0$ by estimating a CM-Rep with the method suggested in~\cite{Yushkevich2009} at the first observation shape $\mathbf{O}_{t_0}$.
-At each time point $t_i$, $R_{t_i}$ is estimated by the same method with an initial baseline CM-Rep $\mathbf{m}_0$. We only use $\mathbf{R}_{t_i}$ as initial radius scalar fields for our framework to estimate a continuous deformation over time of $\mathbf{m}_0$.
+At each time point $t_i$, $\mathbf{R}_{t_i}$ is estimated by the same method with an initial baseline CM-Rep $\mathbf{m}_0$. We only use $\mathbf{R}_{t_i}$ as initial radius scalar fields for our framework to estimate a continuous deformation over time of $\mathbf{m}_0$.
 
 \subsubsection{CM-Rep Shape Trajectory Estimation}
 \label{sssec:GeoUpdate}
 
 The model estimates a diffeomorphic shape  trajectory of CM-Rep $\mathbf{m}$ from a set of observed shapes $\mathbf{O}_{t_i}$ with a fixed radius scalar field at each time point $\mathbf{R}_{t_i}$.
-The geodesic flow of diffeomorphisms along with continuous time $t$, $\phi_t$ is estimated on control points $\mathbf{c}$ and momenta $\mathbf{\alpha}$ on $\mathbf{c}$~\cite{Fishbaugh2013}.
+The geodesic flow of diffeomorphisms along with continuous time $t$, $\phi_t$ is estimated on control points $\mathbf{c}$ which carry momenta $\mathbf{\alpha}$~\cite{Fishbaugh2013}.
 The method optimizes the energy function which measures the distance between a reconstructed shape boundary $\mathbf{X}_{t_i}$ from a fixed radius scalar field $\mathbf{R}_{t_i}$ and a deformed CM-Rep  $\phi_{t_i}( \mathbf{m}_0 )$ at time point $t_i$. 
 \begin{equation}
  E( \mathbf{m}_0, \phi_t ) = \sum_{i=1}^{N_{obs}} || \mathbf{X}_{t_i} ( \phi_{t_i} (\mathbf{m}_0), \mathbf{R}_{t_i} ) - \mathbf{O}_{t_i} ||^2_{\mathit{W}*} + Reg( \phi_t ),
 \end{equation}
-where $Reg(\phi_t)$ is the regularity term of $\phi_t$ and $||\cdot||_{\mathit{W}*}^2$ is a shape distance defined as a varifold metric between meshes $\mathbf{X}_{t_i}$ and $\mathbf{O}_{t_i}$.
+where $Reg(\phi_t)$ is the regularity term of $\phi_t$ and $||\cdot||_{\mathit{W}*}^2$ is a shape distance defined as a varifold metric~\cite{Charon2013} between meshes $\mathbf{X}_{t_i}$ and $\mathbf{O}_{t_i}$.
 As discussed in Section~\ref{ssec:CMRep}, the reconstructed shape mesh $\mathbf{X}_{t_i}$ is well-defined and the surface normals are aligned as outward normal vectors from $\mathbf{m}$. 
-However, the varifold metric suits well to our problem since the surface mesh of observed shape might have flipped normals and the correspondence between $\mathbf{O}_{t_i}$ and $\mathbf{X}_{t_i}$ are not defined. 
+However, the varifold metric well suits our problem since the surface mesh of observed shape might have flipped normals and the correspondence between $\mathbf{O}_{t_i}$ and $\mathbf{X}_{t_i}$ are not defined. 
 
 \subsubsection{Radius Scalar Field Estimation}
 \label{sssec:RadUpdate}
 
-We follow the radius scalar field estimation by solving biharmonic PDE to satisfy the sufficient conditions of valid inverse skeletonization suggested in~\cite{Yushkevich2009}.
-The radius scalar field $\mathbf{R}$ is solved by biharmonic PDE with a potential function $\rho$ defined on $\mathbf{m}$ and boundary condition function $\tau$ on a fixed $\mathbf{m}$,
+We follow the radius scalar field estimation by solving a biharmonic PDE to satisfy the sufficient conditions of valid inverse skeletonization suggested in~\cite{Yushkevich2009}.
+The radius scalar field $\mathbf{R}$ is solved by a biharmonic PDE with a potential function $\rho$ defined on $\mathbf{m}$ and boundary condition function $\tau$ on a fixed $\mathbf{m}$,
 
 \begin{align}
  &\Delta_{\mathbf{m}}^2 f(\mathbf{R}) = \rho \\
@@ -147,10 +147,10 @@ The radius scalar field $\mathbf{R}$ is solved by biharmonic PDE with a potentia
 where $f(\mathbf{R}) = \mathbf{R}^2$, the boundary condition function $\tau$ is a radius on the boundary of $\mathbf{m}$, $\Delta_{\mathbf{m}}$ denotes the Laplace-Beltrami operator on $\mathbf{m}$, $\gamma$ is the parameterized edge of $\mathbf{m}$ by the arc length $s$, and $f(\mathbf{R}), \nu$ denotes the gradient of $f$ with respect to the unit outward normal vector $\nu$. 
 Equation~\ref{eq:BiPDE} can be represented as a linear operator function with solution $f(\mathbf{R})$, $f(\mathbf{R}^2) = \Psi( \rho, \tau)$.
 $\mathbf{R}$ is a squared root of the solution of biharmonic PDE $f(\mathbf{R})$. 
-With a fixed $\mathbf{m}$, $\mathbf{R}$ is estimated by updating $\rho$ and $\tau$ via gradient descent with the Gateaux derivative of the shape matching function $F( \mathbf{m}, \rho | \mathbf{O})$ to an observed shape $\mathbf{O}$ as described in~\cite{Yushkevich2006}.
+With a fixed $\mathbf{m}$, $\mathbf{R}$ is estimated by updating $\rho$ and $\tau$ via gradient descent with the Gateaux derivative of the shape matching function $F( \mathbf{m}, \rho | \mathbf{O})$ to an observed shape $\mathbf{O}$~\cite{Yushkevich2006}.
 
 The proposed method iterates between the CM-Rep shape trajectory estimation and the radius scalar field estimation until it reaches termination criteria. 
-To have a continuous trajectory of reconstructed shape, we apply quadratic spline regression on $\mathbf{R}_{t_i}$ to estimate $\mathbf{R}_t$ which is a radius scalar field function over time $t$ for $\phi_t(\mathbf{m}_0)$. 
+Radius functions are estimated at time points corresponding to observations, with a quadratic spline regression on $\mathbf{R}_{t_i}$ used to estimate a continuous $\mathbf{R}_t$ which is a radius scalar field function over time $t$ for $\phi_t(\mathbf{m}_0)$. 
 
 \section{Experiments}
 \label{sec:Exp}
